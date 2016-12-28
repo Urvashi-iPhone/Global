@@ -262,6 +262,22 @@ roletype=[[NSMutableArray alloc]init];
     }
 }
 
-
-
+```
+  <h3>Check Internet App Method</h3>
+```c 
+  
+ if ([AppMethod Check_Internet] == 1)
+    {
+        self.navigationController.navigationBar.hidden = true;
+        NSString *urlString = @"http://www.google.com";
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        [_webview loadRequest:urlRequest];
+    }
+   else
+    {
+        UIAlertView *al=[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+        [al show];
+    }
+  
 ```
